@@ -98,6 +98,10 @@ export const CONTACT_DATA: ContactInfo = {
   behance: {
     name: 'Behance',
     url: 'https://www.behance.net/felipesantorini'
+  },
+  website: {
+    name: 'Site',
+    url: "https://www.felipesantorini.com.br"
   }
 };
 

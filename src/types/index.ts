@@ -31,5 +31,9 @@ export interface ContactInfo {
     name: string;
     url: string;
   };
+  website: {
+    name: string;
+    url: string;
+  }
 }
 
