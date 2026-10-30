@@ -1,0 +1,281 @@
+/* ==========================================================================
+   SEÇÃO 01 — HERO / APRESENTAÇÃO
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  min-height: 500px;
+}
+
+/* Coluna Esquerda: Tipografia */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
+  position: relative;
+  grid-column: 1 / 2;
+  grid-row: 1;
+  pointer-events: auto;
+}
+
+.hero-badge-24fps {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  color: var(--color-black);
+  margin-bottom: 0.25rem;
+}
+
+.hero-badge-24fps .badge-dot {
+  width: 4px;
+  height: 14px;
+  background-color: var(--color-red);
+  display: inline-block;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 9.5vw, 7.8rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .name-first,
+.hero-title .name-last {
+  display: block;
+}
+
+.hero-roles {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--color-black);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--color-gray-dark);
+  max-width: 380px;
+  margin-bottom: 2.25rem;
+}
+
+/* Botão Explorar Filmes */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  group: true;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.cta-play-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(217, 39, 50, 0.25);
+}
+
+.cta-play-circle svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  margin-left: 2px;
+}
+
+.hero-cta:hover .cta-play-circle {
+  transform: scale(1.1);
+  background-color: var(--color-red-hover);
+}
+
+.cta-label {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-red);
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-black);
+  transition: transform var(--transition-fast);
+}
+
+.cta-arrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.cta-arrow-head {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: -2px;
+}
+
+.hero-cta:hover .cta-arrow {
+  transform: translateX(6px);
+  color: var(--color-red);
+}
+
+/* Coluna Direita: Fotografia Cinematográfica (ampliada e posicionada por trás do texto) */
+.hero-visual {
+  position: relative;
+  grid-column: 1 / 3;
+  grid-row: 1;
+  justify-self: end;
+  width: 72%;
+  max-width: 940px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.hero-photo-wrapper {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.hero-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-photo-wrapper:hover .hero-photo-img {
+  transform: scale(1.02);
+}
+
+/* Anotação manuscrita 24 FPS no topo direito da foto */
+.hero-handwritten-note {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 5;
+  pointer-events: none;
+  transform: rotate(-6deg);
+}
+
+.hero-handwritten-img {
+  width: 68px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+/* Marcação técnica de película na margem esquerda */
+.hero-margin-indicator {
+  position: absolute;
+  left: -2.5rem;
+  bottom: -2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gray);
+  z-index: 1;
+}
+
+.indicator-code {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding-right: 4px;
+}
+
+.indicator-num {
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* Responsividade do Hero */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .hero-visual {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    max-width: 600px;
+    justify-self: center;
+    order: -1;
+  }
+
+  .hero-photo-wrapper {
+    max-width: 100%;
+  }
+
+  .hero-margin-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 3.8rem;
+  }
+
+  .hero-roles {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+}

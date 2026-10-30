@@ -1,0 +1,168 @@
+/* ==========================================================================
+   PORTFÓLIO AUDIOVISUAL — FELIPE SANTORINI
+   Design Editorial Experimental & Cinema Independente
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Paleta cromática oficial */
+  --color-paper: #E7E5DF;
+  --color-paper-light: #F1EFEA;
+  --color-paper-dark: #D7D4CB;
+  --color-black: #101010;
+  --color-black-pure: #090909;
+  --color-black-surface: #151515;
+  --color-red: #D92732;
+  --color-red-hover: #b81b24;
+  --color-petroleum: #0B2633;
+  --color-gray: #777772;
+  --color-gray-dark: #444440;
+  --color-gray-light: #9B9A95;
+  --color-gray-muted: #BCB9B1;
+
+  /* Tipografia */
+  --font-display: 'Bebas Neue', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Space Mono', monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Grids e Espaçamentos */
+  --container-max-width: 1140px;
+  --section-gap: 5rem;
+  --radius-subtle: 2px;
+
+  /* Transições suaves */
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset essencial */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--color-paper);
+  color: var(--color-black);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--color-paper);
+  color: var(--color-black);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Textura granulada analógica sobre o site inteiro */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Links & Botões */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Container editorial central */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Vinco de dobra de papel realista entre seções */
+.paper-crease-divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.09) 0%,
+    rgba(0, 0, 0, 0.16) 50%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  position: relative;
+  margin: 3.5rem 0;
+  border: none;
+}
+
+/* Marcação técnica de rolo / película nas margens */
+.technical-reel-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--color-gray);
+  text-transform: uppercase;
+}
+
+.technical-reel-mark span.bracket {
+  color: var(--color-red);
+}
+
+/* Suporte à redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

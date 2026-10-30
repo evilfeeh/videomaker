@@ -1,0 +1,152 @@
+/* ==========================================================================
+   SEÇÃO 03 — TRABALHOS SELECIONADOS
+   ========================================================================== */
+
+.projects-section {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+/* Cabeçalho da Seção */
+.projects-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.projects-title-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+}
+
+.projects-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5.8vw, 4.8rem);
+  font-weight: 400;
+  line-height: 0.88;
+  color: var(--color-red);
+  text-transform: uppercase;
+}
+
+.projects-title .title-line {
+  display: block;
+}
+
+.projects-title-arrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-red);
+  margin-bottom: 0.5rem;
+}
+
+.projects-arrow-line {
+  width: 44px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.projects-arrow-head {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  margin-left: -3px;
+  line-height: 1;
+}
+
+/* Categorias / Filtros Editoriais */
+.projects-categories {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.category-filter-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--color-gray);
+  cursor: pointer;
+  padding: 0.2rem 0.3rem;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.category-filter-btn:hover {
+  color: var(--color-black);
+}
+
+.category-filter-btn.active {
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+.category-separator {
+  color: rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+/* Traço vermelho decorativo no canto direito do filtro (como na referência) */
+.categories-indicator-line {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 52px;
+  height: 2px;
+  background-color: var(--color-red);
+}
+
+/* Grid de Projetos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+/* Responsividade de Trabalhos Selecionados */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .projects-title {
+    font-size: 3rem;
+  }
+
+  .projects-arrow-line {
+    width: 28px;
+  }
+
+  .projects-categories {
+    flex-wrap: wrap;
+    font-size: 0.7rem;
+    gap: 0.4rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+

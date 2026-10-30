@@ -1,0 +1,13 @@
+/* Layout raiz da aplicação */
+.portfolio-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-paper);
+}
+
+main {
+  flex: 1;
+}
+

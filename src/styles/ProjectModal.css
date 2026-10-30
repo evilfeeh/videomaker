@@ -1,0 +1,229 @@
+/* ==========================================================================
+   MODAL DE DETALHES DO PROJETO / FICHA TÉCNICA DE CINEMA
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(9, 9, 9, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1000;
+  opacity: 0;
+  animation: modalFadeIn 0.25s forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: var(--color-paper);
+  color: var(--color-black);
+  width: 100%;
+  max-width: 820px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  transform: translateY(20px);
+  animation: modalSlideUp 0.3s forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Botão de Fechar */
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 38px;
+  height: 38px;
+  background: var(--color-black);
+  color: var(--color-paper);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-red);
+  transform: scale(1.05);
+}
+
+/* Área de Mídia do Filme */
+.modal-media-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #070707;
+  border-bottom: 2px solid var(--color-red);
+}
+
+.modal-media-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Corpo Editorial do Modal */
+.modal-body {
+  padding: 2.25rem;
+}
+
+.modal-header-info {
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 1.5rem;
+}
+
+.modal-badge-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--color-red);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 0.95;
+  color: var(--color-black);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Ficha Técnica */
+.modal-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-left: 3px solid var(--color-red);
+  font-family: var(--font-mono);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 0.68rem;
+  color: var(--color-gray);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.spec-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+/* Sinopse */
+.modal-synopsis-section {
+  margin-bottom: 2rem;
+}
+
+.modal-synopsis-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.modal-synopsis-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #282825;
+}
+
+/* Rodapé de Ações */
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.modal-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-red);
+  color: #FFFFFF;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.modal-watch-btn:hover {
+  background-color: var(--color-red-hover);
+  transform: translateY(-2px);
+}
+
+.modal-watch-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.modal-source-notice {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-gray);
+  max-width: 380px;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal-watch-btn {
+    justify-content: center;
+  }
+}
+

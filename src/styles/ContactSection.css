@@ -1,0 +1,225 @@
+/* ==========================================================================
+   SEÇÃO 04 — CONTATO (FUNDO PRETO CINEMATOGRÁFICO)
+   ========================================================================== */
+
+.contact-section {
+  position: relative;
+  background-color: var(--color-black);
+  color: #FFFFFF;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* Sutil textura de película sobre o fundo preto */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.2fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4rem;
+}
+
+/* Coluna 1: Título & Sublinhado Vermelho */
+.contact-heading-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-meta-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--color-gray-light);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.contact-meta-line {
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-gray-light);
+}
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 6.5vw, 5.8rem);
+  font-weight: 400;
+  line-height: 0.88;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-title .title-line {
+  display: block;
+}
+
+/* Sublinhado vermelho em pincelada */
+.contact-title-underline {
+  margin-top: 0.4rem;
+  width: 100%;
+  max-width: 260px;
+  height: 4px;
+  background: var(--color-red);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(217, 39, 50, 0.4);
+}
+
+/* Coluna 2: Texto & Links */
+.contact-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.contact-lead-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #A0A09B;
+}
+
+.contact-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #D2D0C8;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.contact-link-item:hover {
+  color: var(--color-red);
+  transform: translateX(4px);
+}
+
+.contact-icon-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-light);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.contact-link-item:hover .contact-icon-wrapper {
+  color: var(--color-red);
+}
+
+.contact-icon-wrapper svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.contact-link-copy-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #A0A09B;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.contact-link-copy-btn:hover {
+  background: var(--color-red);
+  color: #FFFFFF;
+  border-color: var(--color-red);
+}
+
+/* Coluna 3: Fotografia do Olho & Carimbo */
+.contact-visual-col {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-eye-card {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background-color: #050505;
+  overflow: hidden;
+}
+
+.contact-eye-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(115%) brightness(95%);
+  transition: transform var(--transition-smooth);
+}
+
+.contact-eye-card:hover .contact-eye-img {
+  transform: scale(1.04);
+}
+
+/* Carimbo: BORA FAZER ALGO INESQUECÍVEL? */
+.contact-stamp-wrapper {
+  position: absolute;
+  bottom: -15px;
+  right: -10px;
+  z-index: 5;
+  pointer-events: none;
+  transform: rotate(-6deg);
+}
+
+.contact-stamp-img {
+  width: 140px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+/* Responsividade de Contato */
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-visual-col {
+    justify-content: center;
+  }
+
+  .contact-eye-card {
+    max-width: 100%;
+  }
+}

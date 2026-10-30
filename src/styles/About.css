@@ -1,0 +1,195 @@
+/* ==========================================================================
+   SEÇÃO 02 — SOBRE MIM
+   ========================================================================== */
+
+.about-section {
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 280px 1.25fr 0.9fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Coluna 1: Fotografia P&B & Etiqueta Inclinada */
+.about-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-photo-card {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: #222;
+}
+
+.about-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%) contrast(108%);
+  transition: filter var(--transition-fast), transform var(--transition-smooth);
+}
+
+.about-photo-card:hover .about-photo-img {
+  filter: grayscale(80%) contrast(115%);
+  transform: scale(1.02);
+}
+
+/* Fita / Etiqueta preta com texto "TRANSFORMAR IDEIAS EM EXPERIÊNCIAS VISUAIS." */
+.about-badge-tag {
+  position: relative;
+  margin-top: -12px;
+  margin-left: -10px;
+  transform: rotate(-3deg);
+  z-index: 10;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+.about-badge-tag img {
+  display: block;
+  max-width: 230px;
+  height: auto;
+}
+
+/* Coluna 2: Título Vermelho & Biografia */
+.about-bio {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 6.5vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  color: var(--color-red);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.about-title .title-line {
+  display: block;
+}
+
+.about-text {
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.68;
+  color: #2B2B28;
+}
+
+.about-text p {
+  margin-bottom: 1.25rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Coluna 3: Especialidades & Carimbo Manuscrito */
+.about-specialties {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 2.25rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.specialties-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-black);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.specialties-arrow {
+  display: inline-flex;
+  align-items: center;
+}
+
+.specialties-arrow-line {
+  width: 20px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.specialties-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.specialty-item {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  color: #333330;
+  text-transform: uppercase;
+  position: relative;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.specialty-item:hover {
+  color: var(--color-red);
+  transform: translateX(4px);
+}
+
+/* Carimbo manuscrito: CINEMA É SOBRE PESSOAS */
+.about-stamp-wrapper {
+  position: relative;
+  align-self: flex-end;
+  margin-right: 0.5rem;
+  transform: rotate(-4deg);
+}
+
+.about-stamp-img {
+  width: 150px;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: transform var(--transition-fast);
+}
+
+.about-stamp-wrapper:hover .about-stamp-img {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Responsividade de Sobre Mim */
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-visual {
+    max-width: 320px;
+  }
+
+  .about-specialties {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .about-stamp-wrapper {
+    align-self: flex-start;
+  }
+}
